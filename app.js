@@ -7,6 +7,7 @@ const http = require('http');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');  // body parser will help in reading the body of request object
 const router = require('./routes/auth');
+const adminRoutes = require('./routes/admin');
 
 require('dotenv').config(); // loading variables from .env file
 
@@ -17,6 +18,8 @@ const app = express();
 app.use(bodyParser.json())         // In our Lab, we are sending json object in our body.
 
 app.use('/api/auth', router)        // adding auth router as middleware in express app to handle all request at /api/auth route
+
+app.use('/api/admin', adminRoutes)  // adding adminRoutes as middleware in express app to handle all request by admin user.
 
 app.get('/', (req, res) => {
     res.send("hello world");
