@@ -1,0 +1,25 @@
+{
+  "name": "google_oauth_lab",
+  "version": "1.0.0",
+  "description": "This is the google oauth lab.",
+  "main": "app.js",
+  "type": "module",
+  "dependencies": {
+    "dotenv": "^16.5.0",
+    "express": "^5.1.0",
+    "express-session": "^1.18.1",
+    "helmet": "^8.1.0",
+    "passport": "^0.7.0",
+    "passport-google-oauth20": "^2.0.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com-prashsharma88:prashsharma88/Web_Security_Labs.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
