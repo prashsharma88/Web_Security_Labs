@@ -7,10 +7,18 @@ import passport from "./auth/passport.js";
 
 const router = Router();
 
+/**
+ * /auth/google route to handle "login with google" option
+ */
 router.get('/auth/google', 
     passport.authenticate('google', {scope: ['profile', 'email']})
 )
 
+
+/**
+ * In the 'get' handler for callback url we are adding passport middleware to verify the 
+ * response sent by google. If authentication fails the faliureRedirect url will be used.
+ */
 router.get('/auth/google/callback', 
     passport.authenticate('google', {failureRedirect: '/'}),
     (req, res) => {
